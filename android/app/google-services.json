@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "826624700598",
+    "firebase_url": "https://react-native-battleship.firebaseio.com",
+    "project_id": "react-native-battleship",
+    "storage_bucket": "react-native-battleship.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826624700598:android:ccde0912f0a16953",
+        "android_client_info": {
+          "package_name": "com.battleship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826624700598-uc2i3a5f3j8pvchu7r25irk9f4731ndv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn7wp14md8n__xdzvuSzqgFOwjtXhrxIE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
