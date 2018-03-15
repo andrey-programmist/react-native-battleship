@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import BattleField from './BattleField';
 import InfoBoard from './InfoBoard';
@@ -25,6 +25,9 @@ Game.propTypes = {
   settings: PropTypes.shape(settingsShape).isRequired,
 };
 
-const mapStateToProps = state => ({ settings: state.settings });
+const mapStateToProps = state => ({
+  settings: state.settings
+});
+
 
 export default connect(mapStateToProps)(Game);

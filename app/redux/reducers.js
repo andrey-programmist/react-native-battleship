@@ -1,4 +1,4 @@
-import { UPDATE_LAYOUT, UPDATE_SHIPTYPES, BATTLE_FIRE } from './actions';
+import { UPDATE_LAYOUT, UPDATE_SHIPTYPES, BATTLE_FIRE, NEW_GAME } from './actions';
 import { PositionToString } from '../utils/mappers';
 
 const checkBattleCell = (ships, position) =>
@@ -41,6 +41,9 @@ const rootReducer = (state = {}, action) => {
         },
         scoreboard: (isCellHited && scoreboard) || state.scoreboard,
       };
+
+    case NEW_GAME:
+      return { ...state, ...action.payload };
 
     default:
       return state;
