@@ -12,6 +12,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import com.microsoft.appcenter.push.Push;
+
 import java.util.Arrays;
 import java.util.List;
 
