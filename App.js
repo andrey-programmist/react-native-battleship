@@ -9,8 +9,11 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Alert
 } from 'react-native';
+
+import Push from 'appcenter-push';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -30,7 +33,11 @@ const instructions = Platform.select({
 });
 
 const store = createStore(reducer, { ...initialState, ...extendedState });
-
+Push.setListener({
+  onPushNotificationReceived({ message, title }) {
+    Alert.alert(title, message);
+  }
+});
 export default class App extends Component {
   render() {
     return (
