@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { View, Text, StyleSheet } from 'react-native';
 import { PlayerToString } from '../utils/mappers';
 
+const playerShape = {
+  side: PropTypes.string,
+  scores: PropTypes.number,
+  title: PropTypes.string,
+};
 const styles = StyleSheet.create({
   item: {
     width: '50%',
@@ -37,6 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   }
 });
+
 const ScoreBoard = ({ left, right }) => {
   const players = [left, right].map(({ side, scores, title }) => (
     <View style={[styles.item, styles[side]]} key={PlayerToString(side, title)}>
@@ -48,11 +54,7 @@ const ScoreBoard = ({ left, right }) => {
     <View style={styles.container}>{players}</View>
   );
 };
-const playerShape = {
-  side: PropTypes.string,
-  scores: PropTypes.number,
-  title: PropTypes.string,
-};
+
 ScoreBoard.propTypes = {
   left: PropTypes.shape(playerShape).isRequired,
   right: PropTypes.shape(playerShape).isRequired,

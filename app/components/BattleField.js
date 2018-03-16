@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Text, View, StyleSheet, Dimensions, Alert } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import BattleCell from './BattleCell';
 import { PositionToString } from '../utils/mappers';
 

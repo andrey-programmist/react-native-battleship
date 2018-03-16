@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import BattleField from './BattleField';
 import InfoBoard from './InfoBoard';
@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     height: '100%'
   }
 });
+const settingsShape = {
+  dimensions: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
 const Game = ({ settings }) => (
   <View style={styles.container}>
     <BattleField dimensions={settings.dimensions} />
@@ -18,9 +21,6 @@ const Game = ({ settings }) => (
   </View>
 );
 
-const settingsShape = {
-  dimensions: PropTypes.arrayOf(PropTypes.number).isRequired,
-};
 Game.propTypes = {
   settings: PropTypes.shape(settingsShape).isRequired,
 };
@@ -28,6 +28,5 @@ Game.propTypes = {
 const mapStateToProps = state => ({
   settings: state.settings
 });
-
 
 export default connect(mapStateToProps)(Game);

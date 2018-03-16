@@ -11,6 +11,8 @@ const shipTypeImgSrcMap = {
   submarine: require('../assets/Submarine_Shape.png'),
   destroyer: require('../assets/Carrier_Shape.png')
 };
+const hitImg = require('../assets/Hit_small.png');
+const missImg = require('../assets/Miss_small.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -45,9 +47,9 @@ const styles = StyleSheet.create({
 });
 
 export const GetStatusBlockFromSizeAndStatus = (size, isWasted) => {
-  const imgSource = isWasted ?
-    require('../assets/Hit_small.png') :
-    require('../assets/Miss_small.png');
+  const imgSource = isWasted ? hitImg : missImg;
+
+  // Array.prototype.keys() isn't working in react-native
   return [...Array(size)].map((_i, i) => <Image key={SizedStatusBlockToString(size, i)} source={imgSource} style={styles.statusImg} />)
 }
 

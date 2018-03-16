@@ -5,7 +5,10 @@ import { bindActionCreators } from 'redux';
 import { Fire } from '../redux/actions';
 import { PositionToString } from '../utils/mappers';
 import { SHOTRESULT_HIT, SHOTRESULT_MISS, SHOTRESULT_WAITING } from '../utils/shotResults';
-import { TouchableOpacity, View, Text, Image, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Image, StyleSheet } from 'react-native';
+
+const hitImg = require('../assets/Hit.png');
+const missImg = require('../assets/Miss.png');
 
 const styles = StyleSheet.create({
   cell: {
@@ -15,8 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 export const BattleCellPure = ({ shotResult, actions, position, width }) => {
-  const widthStyle = { width, height: width };
-  const cellStyle = [styles.cell, widthStyle];
+  const cellStyle = [styles.cell, { width, height: width }];
   const cell = (r => {
     if (r === SHOTRESULT_WAITING) {
       return (
@@ -25,9 +27,9 @@ export const BattleCellPure = ({ shotResult, actions, position, width }) => {
         </TouchableOpacity>
       );
     } else if (r === SHOTRESULT_HIT) {
-      return <Image style={cellStyle} source={require('../assets/Hit.png')} />;
+      return <Image style={cellStyle} source={hitImg} />;
     } else {
-      return <Image style={cellStyle} source={require('../assets/Miss.png')} />;
+      return <Image style={cellStyle} source={missImg} />;
     }
   })(shotResult);
   return cell;

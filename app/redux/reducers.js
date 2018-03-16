@@ -2,8 +2,9 @@ import { UPDATE_LAYOUT, UPDATE_SHIPTYPES, BATTLE_FIRE, NEW_GAME } from './action
 import { PositionToString } from '../utils/mappers';
 
 const checkBattleCell = (ships, position) =>
-  ships.some(({ positions }) => positions
-    .some(p => p[0] === position[0] && p[1] === position[1]));
+  ships
+    .some(({ positions }) => positions
+      .some(p => p[0] === position[0] && p[1] === position[1]));
 
 const rootReducer = (state = {}, action) => {
   let posKey;
